@@ -14,4 +14,8 @@ public class AdminController {
         return "admin/login";
     }
 
+    @RequestMapping("/admin/menu")
+    public String adminMenu() {
+        return "admin/menu";
+    }
 }
