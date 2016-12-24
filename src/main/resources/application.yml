@@ -5,6 +5,3 @@ spring:
     username: root
     password: password
     driverClassName: com.mysql.cj.jdbc.Driver
-security:
-  basic:
-    enabled: false
