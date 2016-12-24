@@ -21,7 +21,8 @@
                 <form id="login_form" method="post" th:action="@{/admin/login}">
                     <div class="form-group">
                         <label for="login_id">ログインID</label>
-                        <input type="text" class="form-control" id="login_id" name="login_id"/>
+                        <input type="text" class="form-control" id="login_id" name="login_id"
+                               th:value="${login_id}"/>
                     </div>
                     <div class="form-group">
                         <label for="password">パスワード</label>
