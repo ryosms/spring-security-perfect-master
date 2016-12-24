@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by ryosms on 2016/12/21.
  */
 @Controller
-public class LoginController {
+public class AdminController {
 
     @RequestMapping("/admin/login")
     public String adminLogin() {
