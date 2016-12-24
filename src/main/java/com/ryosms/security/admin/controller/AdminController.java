@@ -1,4 +1,4 @@
-package com.ryosms.security.controller;
+package com.ryosms.security.admin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
