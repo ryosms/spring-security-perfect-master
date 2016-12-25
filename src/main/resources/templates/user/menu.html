@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Admin Login</title>
+    <title>ユーザーメニュー</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
@@ -16,23 +16,11 @@
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <h1>メニュー</h1>
+            <h1>ユーザーメニュー</h1>
             <ul>
-                <li>
-                    <a href="./admin/login.html" th:href="@{/admin/login}">
-                        管理者ログイン
-                    </a>
-                </li>
-                <li>
-                    <a href="./user/login.html" th:href="@{/user/login}">
-                        ユーザーログイン
-                    </a>
-                </li>
-                <li>
-                    <a href="./register.html" th:href="@{/demo/create}" target="_blank">
-                        ユーザー作成
-                    </a>
-                </li>
+                <li><a href="login.html" th:href="@{/user/logout}" class="btn btn-link">
+                    ログアウト
+                </a></li>
             </ul>
         </div>
     </div>
