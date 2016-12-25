@@ -31,18 +31,19 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.antMatcher("/admin/**")
+                .authorizeRequests()
                 .antMatchers("/admin/login/failure").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN");
-        http.formLogin()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .and().formLogin()
                 .loginProcessingUrl("/admin/login")
                 .failureForwardUrl("/admin/login/failure")
                 .loginPage("/admin/login")
                 .defaultSuccessUrl("/admin/menu")
                 .usernameParameter("login_id")
                 .passwordParameter("password")
-                .permitAll();
-        http.logout()
+                .permitAll()
+                .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout"))
                 .logoutSuccessUrl("/admin/login");
     }
