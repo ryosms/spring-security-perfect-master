@@ -1,4 +1,4 @@
-package com.ryosms.security;
+package com.ryosms.security.admin;
 
 import com.ryosms.security.admin.domain.service.AdminLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
