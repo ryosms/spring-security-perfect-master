@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * Created by ryosms on 2016/12/24.
@@ -41,6 +42,9 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/admin/menu")
                 .usernameParameter("login_id")
                 .passwordParameter("password");
+        http.logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout"))
+                .logoutSuccessUrl("/admin/login");
     }
 
     @Override
