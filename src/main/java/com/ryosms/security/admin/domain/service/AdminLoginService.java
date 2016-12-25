@@ -1,5 +1,6 @@
 package com.ryosms.security.admin.domain.service;
 
+import com.ryosms.security.admin.domain.model.AdminAccounts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,5 +21,9 @@ public class AdminLoginService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return Optional.ofNullable(adminAccountsRepository.findOne(username))
                 .orElseThrow(() -> new UsernameNotFoundException("not found"));
+    }
+
+    public AdminAccounts save(AdminAccounts entity) {
+        return adminAccountsRepository.save(entity);
     }
 }

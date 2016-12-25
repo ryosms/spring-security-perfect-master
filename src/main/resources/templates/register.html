@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>デモユーザー登録</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <h1>デモユーザー登録</h1>
+            <div class="wel wel-sm">
+                <form id="register_form" method="post" th:action="@{/demo/create}"
+                      th:object="${userForm}">
+                    <div class="form-group" th:classappend="${#fields.hasErrors('loginId')}?'has-error'">
+                        <label for="loginId">ログインID</label>
+                        <input type="text" class="form-control" id="loginId" name="loginId"
+                               th:value="*{loginId}"/>
+                        <label class="help-block">6-255文字</label>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('password')}?'has-error'">
+                        <label for="password">パスワード</label>
+                        <input type="password" class="form-control" id="password" name="password"/>
+                        <label class="help-block">6文字以上</label>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('userName')}?'has-error'">
+                        <label for="userName">ユーザー名</label>
+                        <input type="text" class="form-control" id="userName" name="userName"
+                               th:value="*{userName}"/>
+                        <label class="help-block">255文字以下</label>
+                    </div>
+                    <div class="form-group btn-group">
+                        <input type="submit" name="admin" class="btn btn-default" value="Admin登録"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
