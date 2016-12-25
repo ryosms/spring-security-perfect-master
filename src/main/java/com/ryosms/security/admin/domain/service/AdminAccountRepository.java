@@ -1,6 +1,6 @@
 package com.ryosms.security.admin.domain.service;
 
-import com.ryosms.security.admin.domain.model.AdminAccounts;
+import com.ryosms.security.admin.domain.model.AdminAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
  * Created by ryosms on 2016/12/24.
  */
 @Repository
-interface AdminAccountsRepository extends JpaRepository<AdminAccounts, String> {
+interface AdminAccountRepository extends JpaRepository<AdminAccount, String> {
 }

@@ -25,7 +25,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "admin_accounts", catalog = "spring_security")
-public class AdminAccounts implements UserDetails {
+public class AdminAccount implements UserDetails {
     @Id
     @Column(name = "login_id")
     String loginId;

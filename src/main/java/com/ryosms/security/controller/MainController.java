@@ -1,6 +1,6 @@
 package com.ryosms.security.controller;
 
-import com.ryosms.security.admin.domain.model.AdminAccounts;
+import com.ryosms.security.admin.domain.model.AdminAccount;
 import com.ryosms.security.admin.domain.service.AdminLoginService;
 import com.ryosms.security.form.UserForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,12 +45,12 @@ public class MainController {
             return "register";
         }
 
-        AdminAccounts accounts = AdminAccounts.builder()
+        AdminAccount account = AdminAccount.builder()
                 .loginId(formData.getLoginId())
                 .password(passwordEncoder().encode(formData.getPassword()))
                 .adminName(formData.getUserName())
                 .build();
-        adminLoginService.save(accounts);
+        adminLoginService.save(account);
 
         return "redirect:/demo/create";
     }
