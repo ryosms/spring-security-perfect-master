@@ -22,6 +22,8 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'org.springframework.boot:spring-boot-starter-security'
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile "org.springframework.session:spring-session:${springSessionVersion}"
     compile 'org.springframework.boot:spring-boot-devtools'
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     runtime "mysql:mysql-connector-java:${mysqlConnectorVersion}"
