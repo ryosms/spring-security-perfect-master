@@ -10,3 +10,18 @@ mysql:
             --collation-server=utf8mb4_general_ci 
     environment:
         MYSQL_ROOT_PASSWORD: password
+# redis
+redis:
+  image: redis:3.2.4
+  container_name: ss_redis
+  ports:
+    - "6379:6379"
+# redis-commander
+redis-commander:
+  container_name: ss-redis-commander
+  image: tenstartups/redis-commander
+  command: --redis-host redis
+  links:
+    - redis:redis
+  ports:
+    - "8081:8081"
